@@ -1,0 +1,38 @@
+$color_1: white
+$background-color_1: #2aa9e1
+$background-color_2: #111
+
+/* Style for the main container or body */
+/* Center the content container */
+/* Style the <nav> element */
+/* Style the <ul> for flexbox layout */
+/* Style the <li> items */
+/* Style the <a> links */
+/* Style for hover effect */
+
+.content
+    width: 100vw
+    text-align: center
+    position: relative
+
+nav
+    text-align: center
+    background-color: $background-color_1
+    ul
+        list-style-type: none
+        margin: 0
+        padding: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        li
+            display: inline-block
+            a
+                display: block
+                color: $color_1
+                padding: 14px 16px
+                text-decoration: none
+                text-align: center
+                &:hover
+                    background-color: $background-color_2
