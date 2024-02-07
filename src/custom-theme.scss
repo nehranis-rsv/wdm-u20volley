@@ -1,0 +1,103 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$background-color_main: #263238;
+$rsv-palette: (
+  50: #e0f3fb,
+  100: #b0e0f4,
+  200: #7ecced,
+  300: #4db8e5,
+  400: #2aaae1,
+  500: #039cdc,
+  600: #008fce,
+  700: #007cbb,
+  800: #006ca7,
+  900: #004d86,
+  contrast: (
+    50: rgba(0, 0, 0, 0.7),
+    100: rgba(0, 0, 0, 0.7),
+    200: rgba(0, 0, 0, 0.7),
+    300: rgba(0, 0, 0, 0.7),
+    400: rgba(0, 0, 0, 0.7),
+    500: rgba(0, 0, 0, 0.7),
+    600: rgba(0, 0, 0, 0.7),
+    700: rgba(0, 0, 0, 0.7),
+    800: rgba(0, 0, 0, 0.7),
+    900: rgba(0, 0, 0, 0.7),
+  ),
+);
+
+$rsv-palette-accent: (
+  50: #d6f8f0,
+  100: #97edd7,
+  200: #2ae1bc,
+  300: #00d1a1,
+  400: #00c28e,
+  500: #00b37c,
+  600: #00a56f,
+  700: #00945e,
+  800: #008350,
+  900: #006532,
+  contrast: (
+    50: rgba(0, 0, 0, 0.7),
+    100: rgba(0, 0, 0, 0.7),
+    200: rgba(0, 0, 0, 0.7),
+    300: rgba(0, 0, 0, 0.7),
+    400: rgba(0, 0, 0, 0.7),
+    500: rgba(0, 0, 0, 0.7),
+    600: rgba(0, 0, 0, 0.7),
+    700: rgba(0, 0, 0, 0.7),
+    800: rgba(0, 0, 0, 0.7),
+    900: rgba(0, 0, 0, 0.7),
+  ),
+);
+
+$wdm-u20volley-primary: mat.define-palette($rsv-palette);
+$wdm-u20volley-accent: mat.define-palette($rsv-palette-accent);
+
+// The warn palette is optional (defaults to red).
+$wdm-u20volley-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$wdm-u20volley-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $wdm-u20volley-primary,
+      accent: $wdm-u20volley-accent,
+      warn: $wdm-u20volley-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($wdm-u20volley-theme);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  width: 100%;
+  padding: 0;
+  background-color: $background-color_main; // Dark grey background
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: auto;
+  color: white;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

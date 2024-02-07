@@ -1,0 +1,22 @@
+<!-- Toolbar for larger screens -->
+<mat-toolbar color="primary" *ngIf="isLargeScreen">
+  <button mat-button routerLink="/">Home</button>
+  <button mat-button routerLink="/live-ticker">Live</button>
+  <button mat-button routerLink="/teams">Teams</button>
+  <button mat-button routerLink="/grußworte">Grußworte</button>
+  <button mat-button routerLink="/location">Location</button>
+</mat-toolbar>
+
+<!-- Menu for smaller screens -->
+<mat-toolbar color="primary" *ngIf="!isLargeScreen">
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/">Home</button>
+    <button mat-menu-item routerLink="/live-ticker">Live</button>
+    <button mat-menu-item routerLink="/teams">Teams</button>
+    <button mat-menu-item routerLink="/grußworte">Grußworte</button>
+    <button mat-menu-item routerLink="/location">Location</button>
+  </mat-menu>
+</mat-toolbar>
