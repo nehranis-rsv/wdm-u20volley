@@ -1,10 +1,50 @@
 <!-- Toolbar for larger screens -->
-<mat-toolbar color="primary" *ngIf="isLargeScreen">
-  <button mat-button routerLink="/">Home</button>
+<mat-toolbar color="primary" *ngIf="isLargeScreen" class="centered-toolbar">
+  <!-- <button mat-button routerLink="/">Home</button>
   <button mat-button routerLink="/live-ticker">Live</button>
   <button mat-button routerLink="/teams">Teams</button>
   <button mat-button routerLink="/grußworte">Grußworte</button>
-  <button mat-button routerLink="/location">Location</button>
+  <button mat-button routerLink="/location">Location</button> -->
+  <button mat-button routerLink="/">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="home icon"
+      fontIcon="home"
+    ></mat-icon
+    >Home
+  </button>
+  <button mat-button routerLink="/live-ticker">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="live tv icon"
+      fontIcon="live_tv"
+    ></mat-icon
+    >Live
+  </button>
+  <button mat-button routerLink="/teams">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="groups icon"
+      fontIcon="groups"
+    ></mat-icon
+    >Teams
+  </button>
+  <button mat-button routerLink="/grußworte">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="waving hand icon"
+      fontIcon="waving_hand"
+    ></mat-icon
+    >Grußworte
+  </button>
+  <button mat-button routerLink="/location">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="location icon"
+      fontIcon="location_on"
+    ></mat-icon
+    >Location
+  </button>
 </mat-toolbar>
 
 <!-- Menu for smaller screens -->
@@ -13,10 +53,45 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/">Home</button>
-    <button mat-menu-item routerLink="/live-ticker">Live</button>
-    <button mat-menu-item routerLink="/teams">Teams</button>
-    <button mat-menu-item routerLink="/grußworte">Grußworte</button>
-    <button mat-menu-item routerLink="/location">Location</button>
+    <button mat-menu-item routerLink="/">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="home icon"
+        fontIcon="home"
+      ></mat-icon
+      >Home
+    </button>
+    <button mat-menu-item routerLink="/live-ticker">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="live tv icon"
+        fontIcon="live_tv"
+      ></mat-icon
+      >Live
+    </button>
+    <button mat-menu-item routerLink="/teams">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="groups icon"
+        fontIcon="groups"
+      ></mat-icon
+      >Teams
+    </button>
+    <button mat-menu-item routerLink="/grußworte">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="waving hand icon"
+        fontIcon="waving_hand"
+      ></mat-icon
+      >Grußworte
+    </button>
+    <button mat-menu-item routerLink="/location">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="location icon"
+        fontIcon="location_on"
+      ></mat-icon
+      >Location
+    </button>
   </mat-menu>
 </mat-toolbar>
