@@ -1,7 +1,7 @@
 <div>
-  <h1>Location</h1>
+  <h1>Location/Unterkunft</h1>
   <hr />
-  <h3>Hier findest du details zur location der WDM U20.</h3>
+  <h2>Hier findest du Details zur Location</h2>
   <div class="address-container">
     <p>Albert Einstein Gymnasium (AEG)</p>
     <p>Alte Marktstraße 7</p>
@@ -17,4 +17,19 @@
       referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
   </div>
+
+  <hr />
+
+  <h2>Hier findet ihr mögliche Unterkünfte in der Nähe</h2>
+  <div class="pdf-preview-container">
+    <iframe
+      src="/assets/Unterkuenfte_in_der_Region_WDM_mU20.pdf"
+      frameborder="0"
+      width="100%"
+      height="500px"
+    ></iframe>
+  </div>
+  <button mat-raised-button color="primary" (click)="downloadPDF()">
+    PDF herunterladen
+  </button>
 </div>
