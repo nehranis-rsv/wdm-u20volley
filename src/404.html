@@ -18,13 +18,29 @@
   <body class="mat-typography">
     <script>
       (function () {
-        // Only perform redirection if we're on the 404 page, checking the document's title or a known 404 marker
+        // Capture the full URL path, search query, and hash
+        var fullPath =
+          window.location.pathname +
+          window.location.search +
+          window.location.hash;
+        var baseUrl = "/"; // Base URL of your site
+
+        // Check if it's not already the root, a direct file, or the redirect path itself
         if (
-          document.title === "404" ||
-          window.location.pathname === "/404.html"
+          fullPath !== "/" &&
+          !fullPath.includes("index.html") &&
+          !fullPath.includes("/redirect")
         ) {
-          // Redirect to the root, and rely on Angular to parse the original path from history
-          window.location.href = "/";
+          // Extract the last element from the pathname
+          var pathSegments = window.location.pathname.split("/");
+          var lastSegment = pathSegments.pop() || pathSegments.pop(); // Handle trailing slash
+
+          // Form the redirect URL with the last segment as a query parameter
+          var redirectUrl =
+            baseUrl + "redirect?target=" + encodeURIComponent(lastSegment);
+
+          // Redirect to the formed URL
+          window.location.href = redirectUrl;
         }
       })();
     </script>
