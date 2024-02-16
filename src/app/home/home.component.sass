@@ -1,18 +1,44 @@
 /* Style for the banner image */
 /* Style and position the countdown */
 .banner
-	max-width: 100%
-	height: auto
-	display: block
+    max-width: 100%
+    height: auto
+    display: block
 
 .countdown
-	font-size: 40px
-	padding: 15px
-	border-radius: 5px
-	margin-top: 20px
+    font-size: 40px
+    padding: 15px
+    border-radius: 5px
+    margin-top: 20px
 
 .intro-text
-	font-size: 25px
-	padding: 15px
-	border-radius: 5px
-	margin-top: 20px
+    font-size: 25px
+    padding: 15px
+    border-radius: 5px
+    margin-top: 20px
+
+/* Container for the entire countdown display */
+.countdown-container
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    padding-top: 42px
+
+/* Individual columns for days, hours, minutes, seconds */
+.countdown-column
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin: 0 10px /* Adjust spacing between columns as needed */
+
+.countdown-numbers, .countdown-labels
+    margin: 5px 0 /* Adjust vertical spacing as needed */
+
+.countdown-number, .countdown-label
+    padding: 2px /* Adjust padding as needed */
+    font-size: 42px /* Adjust font size as needed */
+
+.countdown-label
+    font-size: 24px /* Adjust label font size as needed */
+    color: #7ecced /* Adjust label color as needed */

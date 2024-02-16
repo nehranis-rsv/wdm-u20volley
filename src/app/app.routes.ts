@@ -16,13 +16,9 @@ const redirectToDeepLink: CanActivateFn = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
 ) => {
-  const fullPath = route.url.join('/');
   const target = route.queryParams['target'];
-  console.log('FullPath: ' + fullPath);
-  console.log('Target: ' + target);
   if (target) {
     const UrlTree = inject(Router).createUrlTree(['/' + target]);
-    console.log(UrlTree);
     return UrlTree;
   }
   return true;

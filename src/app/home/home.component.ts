@@ -1,15 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, interval } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.sass',
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  countdown: string = '';
+  countdown!:
+    | { message: string }
+    | { days: Number; hours: Number; minutes: Number; seconds: Number };
   private subscription!: Subscription;
 
   ngOnInit() {
@@ -23,12 +26,16 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  private calculateCountdown(endDate: Date): string {
+  private calculateCountdown(
+    endDate: Date
+  ):
+    | { message: string }
+    | { days: Number; hours: Number; minutes: Number; seconds: Number } {
     const now = new Date();
     const diff = endDate.getTime() - now.getTime();
 
     if (diff <= 0) {
-      return 'Event has started';
+      return { message: 'Event has started' };
     }
 
     let days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -36,6 +43,19 @@ export class HomeComponent implements OnInit, OnDestroy {
     let minutes = Math.floor((diff / 1000 / 60) % 60);
     let seconds = Math.floor((diff / 1000) % 60);
 
-    return `${days} Tage ${hours} Stunden ${minutes} Minuten ${seconds} Sekunden`;
+    return { days, hours, minutes, seconds };
+  }
+
+  isMessage(countdown: any): countdown is { message: string } {
+    return (countdown as any).message !== undefined;
+  }
+
+  isNumbers(countdown: any): countdown is {
+    days: Number;
+    hours: Number;
+    minutes: Number;
+    seconds: Number;
+  } {
+    return (countdown as any).days !== undefined;
   }
 }
