@@ -29,7 +29,7 @@
         // Check if it's not already the root or a direct file (like index.html)
         if (fullPath !== "/" && !fullPath.includes("index.html")) {
           // Redirect to the base URL, and let Angular handle the routing
-          window.location.href = baseUrl + "#" + fullPath;
+          window.location.href = baseUrl + fullPath;
         }
       })();
     </script>
