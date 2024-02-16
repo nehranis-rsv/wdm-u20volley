@@ -18,12 +18,18 @@
   <body class="mat-typography">
     <script>
       (function () {
-        // Gets the full URL path, including search query
-        var path = window.location.pathname + window.location.search;
-        // Correctly handle the root path and avoid redirecting in that case
-        if (path && path !== "/index.html" && path !== "/404.html") {
-          // Redirect to the index.html but append the full path for Angular to route correctly
-          window.location.href = "/index.html" + path;
+        // Capture the full URL path including the search query and hash
+        var fullPath =
+          window.location.pathname +
+          window.location.search +
+          window.location.hash;
+        // The base URL of your site, change this if your site is not hosted at the root
+        var baseUrl = "/";
+
+        // Check if it's not already the root or a direct file (like index.html)
+        if (fullPath !== "/" && !fullPath.includes("index.html")) {
+          // Redirect to the base URL, and let Angular handle the routing
+          window.location.href = baseUrl + "#" + fullPath;
         }
       })();
     </script>
