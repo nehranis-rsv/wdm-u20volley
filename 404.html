@@ -17,12 +17,15 @@
   </head>
   <body class="mat-typography">
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // This will parse the URL path and search from the current location
-        const location = window.location.href.split("/").pop();
-        // Redirect to the index.html with the path
-        window.location.replace("/index.html" + location);
-      });
+      (function () {
+        // Gets the full URL path, including search query
+        var path = window.location.pathname + window.location.search;
+        // Correctly handle the root path and avoid redirecting in that case
+        if (path && path !== "/index.html" && path !== "/404.html") {
+          // Redirect to the index.html but append the full path for Angular to route correctly
+          window.location.href = "/index.html" + path;
+        }
+      })();
     </script>
   </body>
 </html>
