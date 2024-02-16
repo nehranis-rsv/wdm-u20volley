@@ -26,18 +26,13 @@
         var baseUrl = "/"; // Base URL of your site
 
         // Check if it's not already the root, a direct file, or the redirect path itself
-        if (
-          fullPath !== "/" &&
-          !fullPath.includes("index.html") &&
-          !fullPath.includes("/redirect")
-        ) {
+        if (fullPath !== "/" && !fullPath.includes("index.html")) {
           // Extract the last element from the pathname
           var pathSegments = window.location.pathname.split("/");
           var lastSegment = pathSegments.pop() || pathSegments.pop(); // Handle trailing slash
 
           // Form the redirect URL with the last segment as a query parameter
-          var redirectUrl =
-            baseUrl + "redirect?target=" + encodeURIComponent(lastSegment);
+          var redirectUrl = baseUrl + "?target=" + lastSegment;
 
           // Redirect to the formed URL
           window.location.href = redirectUrl;

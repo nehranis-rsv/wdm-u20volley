@@ -20,19 +20,20 @@ const redirectToDeepLink: CanActivateFn = (
   const target = route.queryParams['target'];
   console.log('FullPath: ' + fullPath);
   console.log('Target: ' + target);
-  // Implement your redirection logic here
-  // Perform redirection
-  const UrlTree = inject(Router).createUrlTree(['/' + target]);
-  console.log(UrlTree);
-  return UrlTree;
+  if (target) {
+    const UrlTree = inject(Router).createUrlTree(['/' + target]);
+    console.log(UrlTree);
+    return UrlTree;
+  }
+  return true;
 };
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
   {
-    path: 'redirect',
+    path: '',
     canActivate: [redirectToDeepLink],
     component: HomeComponent,
+    pathMatch: 'full',
   },
   { path: 'live-ticker', component: LiveTickerComponent },
   { path: 'teams', component: TeamsComponent },
