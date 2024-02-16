@@ -1,0 +1,8 @@
+<div *ngIf="group" class="group-container">
+  <h3>Gruppe {{ group.groupName }}</h3>
+  <ul>
+    <li *ngFor="let team of group.teams">
+      {{ team }}
+    </li>
+  </ul>
+</div>

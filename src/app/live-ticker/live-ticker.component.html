@@ -4,4 +4,17 @@
   <b> Hier wirst du alle live informationen finden. </b>
 </div>
 
-<div></div>
+<mat-tab-group class="tabGroupContainer">
+  <mat-tab label="Gruppe A">
+    <app-group [group]="GROUP_A"></app-group>
+  </mat-tab>
+  <mat-tab label="Gruppe B">
+    <app-group [group]="GROUP_B"></app-group>
+  </mat-tab>
+  <mat-tab label="Gruppe C">
+    <app-group [group]="GROUP_C"></app-group>
+  </mat-tab>
+  <mat-tab label="Gruppe D">
+    <app-group [group]="GROUP_D"></app-group>
+  </mat-tab>
+</mat-tab-group>

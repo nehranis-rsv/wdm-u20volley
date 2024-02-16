@@ -1,10 +1,48 @@
 import { Component } from '@angular/core';
+import { MatTabsModule } from '@angular/material/tabs';
+import { GroupComponent } from '../group/group.component';
+import { Group } from '../group/group.model';
 
 @Component({
   selector: 'app-live-ticker',
   standalone: true,
-  imports: [],
   templateUrl: './live-ticker.component.html',
   styleUrl: './live-ticker.component.sass',
+  imports: [MatTabsModule, GroupComponent],
 })
-export class LiveTickerComponent {}
+export class LiveTickerComponent {
+  GROUP_A: Group = {
+    groupName: 'A',
+    teams: ['VV Humann Essen', 'TV Hörde', 'SG Aachen', 'WVV-Auswahl'],
+  };
+
+  GROUP_B: Group = {
+    groupName: 'B',
+    teams: [
+      'FCJ Köln',
+      'SG VoR Paderborn/DjK Delbrück',
+      'Rumelner TV',
+      'TSC Gievenbeck',
+    ],
+  };
+
+  GROUP_C: Group = {
+    groupName: 'C',
+    teams: [
+      'Rhein-Sieg Volleys',
+      'Dürener TV',
+      'TuB Bocholt',
+      'Meckenheimer SV',
+    ],
+  };
+
+  GROUP_D: Group = {
+    groupName: 'D',
+    teams: [
+      'TPSV Bielefeld',
+      'Moerser SC',
+      'DJK Rheinkraft Neuss',
+      'VfL Telstar Bochum',
+    ],
+  };
+}
