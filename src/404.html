@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>WdmU20volley</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="mat-typography">
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // This will parse the URL path and search from the current location
+        const location = window.location.href.split("/").pop();
+        // Redirect to the index.html with the path
+        window.location.replace("/index.html" + location);
+      });
+    </script>
+  </body>
+</html>
