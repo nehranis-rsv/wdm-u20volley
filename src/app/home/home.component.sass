@@ -42,3 +42,18 @@
 .countdown-label
     font-size: 24px /* Adjust label font size as needed */
     color: #7ecced /* Adjust label color as needed */
+
+/* Media query for smaller screens */
+@media (max-width: 375px)
+    .countdown-container
+        align-items: center /* Center items on smaller screens */
+
+    .countdown-column
+        width: auto /* Keep the original width, or set to 100% if you want full width */
+        margin: 10px 0 /* Adjusted margin for smaller screens */
+
+    .countdown-number, .countdown-label
+        font-size: 24px /* Adjust font size for smaller screens */
+
+    .countdown-label
+        font-size: 16px /* Adjust label font size as needed for smaller screens */
