@@ -1,0 +1,55 @@
+<h2 mat-dialog-title>Team Details</h2>
+
+<div mat-dialog-content>
+  <!-- Players Table -->
+  <h3>Players</h3>
+  <table mat-table [dataSource]="data.players" class="mat-elevation-z8">
+    <tr mat-header-row *matHeaderRowDef="playerColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: playerColumns"></tr>
+
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let player">{{ player.number }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.firstName }} {{ player.lastName }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>Position</th>
+      <td mat-cell *matCellDef="let player">{{ player.position }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef>Year</th>
+      <td mat-cell *matCellDef="let player">{{ player.year }}</td>
+    </ng-container>
+  </table>
+
+  <!-- Coaches Table -->
+  <h3>Coaches</h3>
+  <table mat-table [dataSource]="data.coaches" class="mat-elevation-z8">
+    <tr mat-header-row *matHeaderRowDef="coachColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: coachColumns"></tr>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let coach">
+        {{ coach.firstName }} {{ coach.lastName }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="role">
+      <th mat-header-cell *matHeaderCellDef>Role</th>
+      <td mat-cell *matCellDef="let coach">{{ coach.role }}</td>
+    </ng-container>
+  </table>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button color="primary" [mat-dialog-close]="true">Close</button>
+</div>

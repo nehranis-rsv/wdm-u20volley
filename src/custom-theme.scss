@@ -101,3 +101,8 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.table-header-primary {
+  background-color: mat-color($wdm-u20volley-primary, 500);
+  color: mat-contrast($wdm-u20volley-primary, 500); // This is correct as per your initial setup
+}
