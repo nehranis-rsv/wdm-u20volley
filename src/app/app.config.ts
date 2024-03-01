@@ -7,7 +7,8 @@ import { LocationComponent } from './location/location.component';
 import { TeamsComponent } from './teams/teams.component';
 import { provideRouter } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { NavigationComponent } from './navigation/navigation.component';
+import { SamsApiService } from './sams-api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
