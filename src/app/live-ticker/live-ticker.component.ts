@@ -5,6 +5,7 @@ import { Group } from '../group/group.model';
 import { CommonModule } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-live-ticker',
@@ -17,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule,
     MatGridListModule,
     MatButtonModule,
+    MatIconModule,
   ],
 })
 export class LiveTickerComponent {
