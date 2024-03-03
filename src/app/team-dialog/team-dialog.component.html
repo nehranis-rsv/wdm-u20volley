@@ -1,10 +1,14 @@
-<h2 mat-dialog-title>Team Details</h2>
+<h1 mat-dialog-title>Team Details</h1>
 
 <div mat-dialog-content>
   <!-- Players Table -->
-  <h3>Players</h3>
+  <h2>Spieler</h2>
   <table mat-table [dataSource]="data.players" class="mat-elevation-z8">
-    <tr mat-header-row *matHeaderRowDef="playerColumns"></tr>
+    <tr
+      mat-header-row
+      class="table-header-primary"
+      *matHeaderRowDef="playerColumns"
+    ></tr>
     <tr mat-row *matRowDef="let row; columns: playerColumns"></tr>
 
     <ng-container matColumnDef="number">
@@ -31,9 +35,13 @@
   </table>
 
   <!-- Coaches Table -->
-  <h3>Coaches</h3>
+  <h2>Trainer*innen & Betreuer*innen</h2>
   <table mat-table [dataSource]="data.coaches" class="mat-elevation-z8">
-    <tr mat-header-row *matHeaderRowDef="coachColumns"></tr>
+    <tr
+      mat-header-row
+      class="table-header-primary"
+      *matHeaderRowDef="coachColumns"
+    ></tr>
     <tr mat-row *matRowDef="let row; columns: coachColumns"></tr>
 
     <ng-container matColumnDef="name">

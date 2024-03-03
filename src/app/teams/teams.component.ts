@@ -5,7 +5,13 @@ import { TeamDialogComponent } from '../team-dialog/team-dialog.component';
 import { RSV, VVHE } from './teams.models';
 import { CommonModule } from '@angular/common';
 
-export type Position = 'MB' | 'AA' | 'Z' | 'D' | 'L' | 'AA/L' | 'unknown';
+export type Position = 'MB' | 'AA' | 'Z' | 'D' | 'L' | 'AA/L' | 'Unbekannt';
+
+export type Trainer = 'Trainer*in';
+export type Betreuer = 'Betreuer*in';
+
+export const trainer: Trainer = 'Trainer*in';
+export const betreuer: Betreuer = 'Betreuer*in';
 
 export interface Player {
   number: number;
@@ -18,7 +24,7 @@ export interface Player {
 export interface Coach {
   firstName: string;
   lastName: string;
-  role: 'Trainer/in' | 'Betreuer/in';
+  role: Trainer | Betreuer;
 }
 
 export interface Team {
