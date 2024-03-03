@@ -13,7 +13,9 @@
 
     <ng-container matColumnDef="number">
       <th mat-header-cell *matHeaderCellDef>No.</th>
-      <td mat-cell *matCellDef="let player">{{ player.number }}</td>
+      <td mat-cell *matCellDef="let player">
+        {{ player.number == 0 ? "?" : player.number }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="name">
@@ -30,7 +32,9 @@
 
     <ng-container matColumnDef="year">
       <th mat-header-cell *matHeaderCellDef>Year</th>
-      <td mat-cell *matCellDef="let player">{{ player.year }}</td>
+      <td mat-cell *matCellDef="let player">
+        {{ player.year == 0 ? "?" : player.year }}
+      </td>
     </ng-container>
   </table>
 
