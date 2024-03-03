@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { TeamDialogComponent } from '../team-dialog/team-dialog.component';
-import { RSV, VVHE } from './teams.models';
 import { CommonModule } from '@angular/common';
+import { teamMap } from './teams.models';
 
 export type Position = 'MB' | 'AA' | 'Z' | 'D' | 'L' | 'AA/L' | 'Unbekannt';
 
@@ -43,7 +43,7 @@ export interface Team {
   styleUrl: './teams.component.sass',
 })
 export class TeamsComponent {
-  items = [VVHE, RSV];
+  teams = Array.from(teamMap);
 
   numCols = 3;
 
@@ -61,13 +61,13 @@ export class TeamsComponent {
     }
   }
   openDialog(item: Team): void {
-    let dialogRefWidth = '80%'; // Default width
+    let dialogRefWidth = '99%'; // Default width
     const width = window.innerWidth; // Get current window width
 
     if (width <= 600) {
-      dialogRefWidth = '90%'; // Take up more space on smaller screens
+      dialogRefWidth = '99%'; // Take up more space on smaller screens
     } else if (width > 600 && width <= 960) {
-      dialogRefWidth = '90%';
+      dialogRefWidth = '80%';
     } else {
       dialogRefWidth = '60%';
     }

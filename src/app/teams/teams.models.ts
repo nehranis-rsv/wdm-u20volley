@@ -1,6 +1,7 @@
-import { Team, betreuer, trainer } from './teams.component';
+import { Team } from './teams.component';
 
-export const VVHE: Team = {
+export const teamMap: Map<string, Team> = new Map<string, Team>();
+teamMap.set('VVHE', {
   name: 'Volleyball Verein Humann Essen',
   logo: '/assets/vvhe_logo.jpg',
   foto: '/assets/vvhe_foto.jpg',
@@ -138,9 +139,8 @@ export const VVHE: Team = {
       role: 'Betreuer*in',
     },
   ],
-};
-
-export const RSV: Team = {
+});
+teamMap.set('RSV', {
   name: 'Rhein-Sieg Volleys',
   logo: 'assets/rsv_logo.png',
   foto: 'assets/rsv_foto.jpg',
@@ -277,4 +277,4 @@ export const RSV: Team = {
       role: 'Betreuer*in',
     },
   ],
-};
+});

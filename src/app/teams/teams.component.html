@@ -7,10 +7,10 @@
     gutterSize="10px"
     (window:resize)="onResize($event)"
   >
-    <mat-grid-tile *ngFor="let item of items" (click)="openDialog(item)">
-      <img [src]="item.logo" alt="logo" style="width: auto; height: 100%" />
+    <mat-grid-tile *ngFor="let team of teams" (click)="openDialog(team[1])">
+      <img [src]="team[1].logo" alt="logo" style="width: auto; height: 100%" />
       <mat-grid-tile-footer>
-        <h3>{{ item.name }}</h3>
+        <h3>{{ team[1].name }}</h3>
       </mat-grid-tile-footer>
     </mat-grid-tile>
   </mat-grid-list>
