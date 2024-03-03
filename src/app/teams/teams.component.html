@@ -1,6 +1,17 @@
 <div>
   <h1>Teams</h1>
   <hr />
-  <b>Hier findet ihr Details und Informationen zu den qualifizierten Teams.</b>
-  <p>noch in Arbeit...</p>
+  <mat-grid-list
+    cols="{{ numCols }}"
+    rowHeight="200px"
+    gutterSize="10px"
+    (window:resize)="onResize($event)"
+  >
+    <mat-grid-tile *ngFor="let item of items" (click)="openDialog(item)">
+      <img [src]="item.logo" alt="logo" style="width: auto; height: 100%" />
+      <mat-grid-tile-footer>
+        <h3>{{ item.name }}</h3>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
