@@ -115,27 +115,27 @@ export const VVHE: Team = {
     {
       lastName: 'Wojtczak',
       firstName: 'Thomas',
-      role: trainer,
+      role: 'Trainer*in',
     },
     {
       lastName: 'Mrozek',
       firstName: 'Linus',
-      role: betreuer,
+      role: 'Betreuer*in',
     },
     {
       firstName: 'Konstantin',
       lastName: 'Brandt',
-      role: betreuer,
+      role: 'Betreuer*in',
     },
     {
       firstName: 'Till',
       lastName: 'Köhnen',
-      role: betreuer,
+      role: 'Betreuer*in',
     },
     {
       firstName: 'Lukas',
       lastName: 'Prions',
-      role: betreuer,
+      role: 'Betreuer*in',
     },
   ],
 };
@@ -269,12 +269,12 @@ export const RSV: Team = {
     {
       firstName: 'Max',
       lastName: 'Hopf',
-      role: trainer,
+      role: 'Trainer*in',
     },
     {
       firstName: 'Jan-Niklas',
       lastName: 'comes',
-      role: betreuer,
+      role: 'Betreuer*in',
     },
   ],
 };
