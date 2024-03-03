@@ -1,6 +1,8 @@
 <h1 mat-dialog-title>Team Details</h1>
 
 <div mat-dialog-content>
+  <img src="{{ data.foto }}" alt="Team Foto" class="team-foto" />
+
   <!-- Players Table -->
   <h2>Spieler</h2>
   <table mat-table [dataSource]="data.players" class="mat-elevation-z8">

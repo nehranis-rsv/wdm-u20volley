@@ -3,6 +3,7 @@ import { Team, betreuer, trainer } from './teams.component';
 export const VVHE: Team = {
   name: 'Volleyball Verein Humann Essen',
   logo: '/assets/vvhe_logo.jpg',
+  foto: '/assets/vvhe_foto.jpg',
   players: [
     {
       number: 1,
@@ -142,6 +143,7 @@ export const VVHE: Team = {
 export const RSV: Team = {
   name: 'Rhein-Sieg Volleys',
   logo: 'assets/rsv_logo.png',
+  foto: 'assets/rsv_foto.jpg',
   players: [
     {
       firstName: 'Moritz',

@@ -30,6 +30,7 @@ export interface Coach {
 export interface Team {
   name: string;
   logo: string;
+  foto: string;
   players: Player[];
   coaches: Coach[];
 }
