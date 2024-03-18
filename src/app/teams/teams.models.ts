@@ -1,5 +1,4 @@
-import { TemplateBindingParseResult } from '@angular/compiler';
-import { Team, trainer } from './teams.component';
+import { Team } from './teams.component';
 
 export const teamMap: Map<string, Team> = new Map<string, Team>();
 teamMap.set('VVHE', {
@@ -141,6 +140,7 @@ teamMap.set('VVHE', {
     },
   ],
 });
+
 teamMap.set('RSV', {
   name: 'Rhein-Sieg Volleys',
   logo: 'assets/rsv_logo.png',
