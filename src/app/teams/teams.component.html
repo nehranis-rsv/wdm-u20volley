@@ -8,7 +8,11 @@
     (window:resize)="onResize($event)"
   >
     <mat-grid-tile *ngFor="let team of teams" (click)="openDialog(team[1])">
+      @if (team[0] == 'MSC' || team[0] == 'VRP' || team[0] == 'FCJ') {
+      <img [src]="team[1].logo" alt="logo" style="width: 100%; height: auto" />
+      } @else {
       <img [src]="team[1].logo" alt="logo" style="width: auto; height: 100%" />
+      }
       <mat-grid-tile-footer>
         <h3>{{ team[1].name }}</h3>
       </mat-grid-tile-footer>

@@ -5,13 +5,25 @@ import { TeamDialogComponent } from '../team-dialog/team-dialog.component';
 import { CommonModule } from '@angular/common';
 import { teamMap } from './teams.models';
 
-export type Position = 'MB' | 'AA' | 'Z' | 'D' | 'L' | 'AA/L' | 'Unbekannt';
+export type Position =
+  | 'MB'
+  | 'AA'
+  | 'Z'
+  | 'D'
+  | 'L'
+  | 'AA/L'
+  | 'AA/MB'
+  | 'AA/D'
+  | 'U'
+  | 'Unbekannt';
 
 export type Trainer = 'Trainer*in';
 export type Betreuer = 'Betreuer*in';
+export type Physio = 'Physotherapeut*in';
 
 export const trainer: Trainer = 'Trainer*in';
 export const betreuer: Betreuer = 'Betreuer*in';
+export const physio: Physio = 'Physotherapeut*in';
 
 export interface Player {
   number: number;
@@ -24,7 +36,7 @@ export interface Player {
 export interface Coach {
   firstName: string;
   lastName: string;
-  role: Trainer | Betreuer;
+  role: Trainer | Betreuer | Physio;
 }
 
 export interface Team {
@@ -45,7 +57,7 @@ export interface Team {
 export class TeamsComponent {
   teams = Array.from(teamMap);
 
-  numCols = 3;
+  numCols = 4;
 
   constructor(public dialog: MatDialog) {}
 
