@@ -12,7 +12,7 @@ import { MatTableModule } from '@angular/material/table';
   styleUrl: './team-dialog.component.sass',
 })
 export class TeamDialogComponent {
-  playerColumns: string[] = ['number', 'name', 'position', 'year'];
+  playerColumns: string[] = ['name', 'position', 'year'];
   coachColumns: string[] = ['name', 'role'];
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
