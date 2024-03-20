@@ -217,7 +217,7 @@ teamMap.set('RSV', {
       position: 'MB',
     },
     {
-      firstName: 'Mohammad Soltanzadeh Salahdar',
+      firstName: 'Mohammad',
       lastName: 'Seyed',
       number: 0,
       year: 2006,
