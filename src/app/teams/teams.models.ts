@@ -1620,7 +1620,7 @@ teamMap.set('TSC', {
 });
 
 teamMap.set('WVV', {
-  name: 'WVV Auswah',
+  name: 'WVV Auswahl',
   logo: 'assets/wvv_logo.jpg',
   foto: 'assets/wvv_foto.jpg',
   players: [
