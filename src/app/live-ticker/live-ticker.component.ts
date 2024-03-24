@@ -24,36 +24,41 @@ import { MatIconModule } from '@angular/material/icon';
 export class LiveTickerComponent {
   GROUP_A: Group = {
     groupName: 'A',
-    teams: ['VV Humann Essen', 'TV Hörde', 'SG Aachen', 'WVV-Auswahl'],
+    teams: [
+      { teamName: 'VV Humann Essen', teamSlag: 'VVHE' },
+      { teamName: 'TV Hörde', teamSlag: 'TVH' },
+      { teamName: 'SG Aachen', teamSlag: 'SGA' },
+      { teamName: 'WVV-Auswahl', teamSlag: 'WVV' },
+    ],
   };
 
   GROUP_B: Group = {
     groupName: 'B',
     teams: [
-      'FCJ Köln',
-      'SG VoR Paderborn/DjK Delbrück',
-      'Rumelner TV',
-      'TSC Gievenbeck',
+      { teamName: 'FCJ Köln', teamSlag: 'FCJ' },
+      { teamName: 'SG VoR Paderborn/DjK Delbrück', teamSlag: 'VRP' },
+      { teamName: 'Rumelner TV', teamSlag: 'RTV' },
+      { teamName: 'TSC Gievenbeck', teamSlag: 'TSC' },
     ],
   };
 
   GROUP_C: Group = {
     groupName: 'C',
     teams: [
-      'Rhein-Sieg Volleys',
-      'Dürener TV',
-      'TuB Bocholt',
-      'Meckenheimer SV',
+      { teamName: 'Rhein-Sieg Volleys', teamSlag: 'RSV' },
+      { teamName: 'Dürener TV', teamSlag: 'DTV' },
+      { teamName: 'TuB Bocholt', teamSlag: 'TUB' },
+      { teamName: 'Meckenheimer SV', teamSlag: 'MSV' },
     ],
   };
 
   GROUP_D: Group = {
     groupName: 'D',
     teams: [
-      'TPSV Bielefeld',
-      'Moerser SC',
-      'DJK Rheinkraft Neuss',
-      'VfL Telstar Bochum',
+      { teamName: 'TPSV Bielefeld', teamSlag: 'TPSVB' },
+      { teamName: 'Moerser SC', teamSlag: 'MSC' },
+      { teamName: 'DJK Rheinkraft Neuss', teamSlag: 'DJKRN' },
+      { teamName: 'VfL Telstar Bochum', teamSlag: 'TB' },
     ],
   };
 

@@ -72,6 +72,7 @@ export class TeamsComponent {
       this.numCols = 3;
     }
   }
+
   openDialog(item: Team): void {
     let dialogRefWidth = '99%'; // Default width
     const width = window.innerWidth; // Get current window width

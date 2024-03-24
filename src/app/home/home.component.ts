@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { Subscription, interval } from 'rxjs';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatButtonModule, MatDividerModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.sass',
 })
@@ -57,5 +59,21 @@ export class HomeComponent implements OnInit, OnDestroy {
     seconds: Number;
   } {
     return (countdown as any).days !== undefined;
+  }
+
+  url = '/assets/WDM_2024_Broschüre.pdf';
+
+  downloadPDF(): void {
+    // Create a new link element programmatically
+    const link = document.createElement('a');
+    // Set the href and download attributes of the link
+    link.href = this.url;
+    link.download = 'WDM 2024 Broschüre.pdf'; // The file name for download
+    // Append the link to the body
+    document.body.appendChild(link);
+    // Simulate a click on the link
+    link.click();
+    // Remove the link from the body
+    document.body.removeChild(link);
   }
 }
