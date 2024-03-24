@@ -411,7 +411,7 @@ teamMap.set('DTV', {
 });
 
 teamMap.set('MSV', {
-  name: 'Meckemheimer SV',
+  name: 'Meckenheimer SV',
   logo: 'assets/msv_logo.jpg',
   foto: 'assets/msv_foto.jpg',
   players: [
