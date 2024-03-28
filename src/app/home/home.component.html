@@ -49,6 +49,16 @@
 
 <mat-divider class="divider"></mat-divider>
 
+<div class="pdf-preview-container">
+  <iframe
+    #heft_iframe
+    src="/assets/wdm_2024_heft.pdf"
+    frameborder="0"
+    width="100%"
+    height="500px"
+  ></iframe>
+</div>
+
 <button mat-raised-button color="primary" (click)="downloadPDF()">
-  Die WDM Broschüre als PDF herunterladen
+  Das Heft zur WDM als PDF herunterladen
 </button>

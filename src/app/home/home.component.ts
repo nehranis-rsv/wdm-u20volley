@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { Subscription, interval } from 'rxjs';
 import { MatDividerModule } from '@angular/material/divider';
@@ -12,6 +18,8 @@ import { MatDividerModule } from '@angular/material/divider';
   styleUrl: './home.component.sass',
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  @ViewChild('heft_iframe') iframe!: ElementRef;
+
   countdown!:
     | { message: string }
     | { days: Number; hours: Number; minutes: Number; seconds: Number };
@@ -61,14 +69,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     return (countdown as any).days !== undefined;
   }
 
-  url = '/assets/WDM_2024_Broschüre.pdf';
+  url = '/assets/wdm_2024_heft.pdf';
 
   downloadPDF(): void {
     // Create a new link element programmatically
     const link = document.createElement('a');
     // Set the href and download attributes of the link
     link.href = this.url;
-    link.download = 'WDM 2024 Broschüre.pdf'; // The file name for download
+    link.download = 'WDM_2024_Heft.pdf'; // The file name for download
     // Append the link to the body
     document.body.appendChild(link);
     // Simulate a click on the link
