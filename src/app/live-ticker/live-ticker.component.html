@@ -39,81 +39,65 @@
 </div>
 
 <div>
-  <h1>Spielpläne</h1>
-  <mat-grid-list [cols]="gridColumns" rowHeight="4:3" gutterSize="10px">
-    <mat-grid-tile *ngFor="let image of images">
-      <mat-grid-tile-header>
-        {{ image.title }}
-      </mat-grid-tile-header>
-      <img
-        src="{{ image.src }}"
-        alt="{{ image.alt }}"
-        (click)="openImage(image.src)"
-        style="width: 100%; cursor: pointer"
-      />
-    </mat-grid-tile>
-  </mat-grid-list>
+  <h1>Spielplan</h1>
 
-  <!-- Placeholder for the large image view; hidden initially -->
-  <div
-    *ngIf="selectedImage"
-    class="image-large-view"
-    (click)="selectedImage = null"
-  >
-    <img
-      src="{{ selectedImage }}"
-      alt="Large view"
-      style="max-width: 90%; max-height: 90vh"
-    />
+  <div class="pdf-preview-container">
+    <iframe
+      src="/assets/spielplan_wdm.pdf"
+      frameborder="0"
+      width="100%"
+      height="500px"
+    ></iframe>
   </div>
-</div>
 
-<div>
-  <h1>Ergebnissdienst des WVV</h1>
-  <h2>Westdeutsche Meisterschaft & Quali Runde</h2>
-  <p>
-    Die Ergebnisse der Qaulifikationsrunden und der Westdeutschen Meisterschaft
-  </p>
-  <div class="info-box">
-    <mat-icon
-      aria-hidden="false"
-      aria-label="Tip light bulb"
-      fontIcon="lightbulb"
-    ></mat-icon>
+  <div>
+    <h1>Ergebnissdienst des WVV</h1>
+    <h2>Westdeutsche Meisterschaft & Quali Runde</h2>
     <p>
-      Die Westdeutschen Meisterschaften sind ganz am Ende der unten angezeigten
-      Ergebnisse zu finden!
+      Die Ergebnisse der Qaulifikationsrunden und der Westdeutschen
+      Meisterschaft
     </p>
-  </div>
-  <iframe
-    src="https://ergebnisdienst.volleyball.nrw/cms/home/jugend/wdm/wdm_u20/maennlich.xhtml?LeaguePresenter.view=matches&LeaguePresenter.matchSeriesId=52773209"
-    width="100%"
-    height="600"
-    style="border: none"
-  ></iframe>
-  <a
-    href="https://ergebnisdienst.volleyball.nrw/cms/home/jugend/wdm/wdm_u20/maennlich.xhtml?LeaguePresenter.view=matches&LeaguePresenter.matchSeriesId=52773209"
-    target="_blank"
-    rel="noopener noreferrer"
-    mat-raised-button
-    color="primary"
-    >In neuem Tab öffnen</a
-  >
+    <div class="info-box">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Tip light bulb"
+        fontIcon="lightbulb"
+      ></mat-icon>
+      <p>
+        Die Westdeutschen Meisterschaften sind ganz am Ende der unten
+        angezeigten Ergebnisse zu finden!
+      </p>
+    </div>
+    <iframe
+      src="https://ergebnisdienst.volleyball.nrw/cms/home/jugend/wdm/wdm_u20/maennlich.xhtml?LeaguePresenter.view=matches&LeaguePresenter.matchSeriesId=52773209"
+      width="100%"
+      height="600"
+      style="border: none"
+    ></iframe>
+    <a
+      href="https://ergebnisdienst.volleyball.nrw/cms/home/jugend/wdm/wdm_u20/maennlich.xhtml?LeaguePresenter.view=matches&LeaguePresenter.matchSeriesId=52773209"
+      target="_blank"
+      rel="noopener noreferrer"
+      mat-raised-button
+      color="primary"
+      >In neuem Tab öffnen</a
+    >
 
-  <h2>NRW Liga</h2>
-  <p>Die Ergebnisse der abgelaufenen NRW Liga</p>
-  <iframe
-    src="https://ergebnisdienst.volleyball.nrw/cms/home/jugend/u20/u20_maennlich/nrw_liga.xhtml"
-    width="100%"
-    height="600"
-    style="border: none"
-  ></iframe>
-  <a
-    href="https://ergebnisdienst.volleyball.nrw/cms/home/jugend/u20/u20_maennlich/nrw_liga.xhtml"
-    target="_blank"
-    rel="noopener noreferrer"
-    mat-raised-button
-    color="primary"
-    >In neuem Tab öffnen</a
-  >
+    <h2>NRW Liga</h2>
+    <p>Die Ergebnisse der abgelaufenen NRW Liga</p>
+    <iframe
+      src="https://ergebnisdienst.volleyball.nrw/cms/home/jugend/u20/u20_maennlich/nrw_liga.xhtml"
+      width="100%"
+      height="600"
+      style="border: none"
+    ></iframe>
+    <a
+      href="https://ergebnisdienst.volleyball.nrw/cms/home/jugend/u20/u20_maennlich/nrw_liga.xhtml"
+      target="_blank"
+      rel="noopener noreferrer"
+      mat-raised-button
+      color="primary"
+      >In neuem Tab öffnen</a
+    >
+  </div>
 </div>
