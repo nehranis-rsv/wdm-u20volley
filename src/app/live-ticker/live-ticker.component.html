@@ -1,10 +1,16 @@
 <div>
   <h1>Live</h1>
   <hr />
-  <b> Hier findet ihr alle live informationen zum Turnier. </b>
+  <p>
+    <b> Hier findet ihr alle live informationen zum Turnier. </b>
+  </p>
+  <hr />
 </div>
 
-<mat-tab-group class="tabGroupContainer">
+<mat-tab-group
+  class="tabGroupContainer"
+  (selectedTabChange)="onTabChange($event)"
+>
   <mat-tab label="Gruppe A">
     <app-group [group]="GROUP_A"></app-group>
   </mat-tab>
@@ -18,6 +24,9 @@
     <app-group [group]="GROUP_D"></app-group>
   </mat-tab>
 </mat-tab-group>
+<app-twitch-stream [channel]="currentChannel"></app-twitch-stream>
+
+<hr />
 
 <h1>Live Ticker</h1>
 <p>

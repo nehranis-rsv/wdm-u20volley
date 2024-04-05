@@ -1,11 +1,12 @@
 import { Component, HostListener } from '@angular/core';
-import { MatTabsModule } from '@angular/material/tabs';
+import { MatTabChangeEvent, MatTabsModule } from '@angular/material/tabs';
 import { GroupComponent } from '../group/group.component';
 import { Group } from '../group/group.model';
 import { CommonModule } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { TwitchStreamComponent } from '../twitch-stream/twitch-stream.component';
 
 @Component({
   selector: 'app-live-ticker',
@@ -19,9 +20,11 @@ import { MatIconModule } from '@angular/material/icon';
     MatGridListModule,
     MatButtonModule,
     MatIconModule,
+    TwitchStreamComponent,
   ],
 })
 export class LiveTickerComponent {
+  currentChannel: string = 'RSVFeld1';
   GROUP_A: Group = {
     groupName: 'A',
     teams: [
@@ -107,5 +110,25 @@ export class LiveTickerComponent {
     } else {
       this.gridColumns = 3; // Default
     }
+  }
+
+  onTabChange(event: MatTabChangeEvent): void {
+    switch (event.index) {
+      case 0:
+        this.currentChannel = 'RSVFeld1';
+        break;
+      case 1:
+        this.currentChannel = 'RSVFeld2';
+        break;
+      case 2:
+        this.currentChannel = 'RSVFeld3';
+        break;
+      case 3:
+        this.currentChannel = 'RSVFeld4';
+        break;
+      default:
+        this.currentChannel = 'RSVFeld1'; // Fallback channel
+    }
+    // You may want to reload the Twitch stream here if needed
   }
 }
