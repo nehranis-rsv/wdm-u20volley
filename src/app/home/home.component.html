@@ -6,46 +6,8 @@
 </div>
 <img src="assets/banner.png" alt="Banner" class="banner" />
 
-<div *ngIf="countdown as countdownMessage">
-  <ng-container *ngIf="isNumbers(countdown); else displayMessage">
-    <div class="countdown-container">
-      <div class="countdown-column">
-        <span class="countdown-number">{{ countdown.days }}</span>
-        <span class="countdown-label">Tage</span>
-      </div>
-      <div class="countdown-column">
-        <span class="countdown-number">:</span>
-        <span class="countdown-label">&nbsp;</span>
-      </div>
-      <div class="countdown-column">
-        <span class="countdown-number">{{ countdown.hours }}</span>
-        <span class="countdown-label">Stunden</span>
-      </div>
-      <div class="countdown-column">
-        <span class="countdown-number">:</span>
-        <span class="countdown-label">&nbsp;</span>
-      </div>
-      <div class="countdown-column">
-        <span class="countdown-number">{{ countdown.minutes }}</span>
-        <span class="countdown-label">Minuten</span>
-      </div>
-      <div class="countdown-column">
-        <span class="countdown-number">:</span>
-        <span class="countdown-label">&nbsp;</span>
-      </div>
-      <div class="countdown-column">
-        <span class="countdown-number">{{ countdown.seconds }}</span>
-        <span class="countdown-label">Sekunden</span>
-      </div>
-    </div>
-  </ng-container>
-</div>
-
-<ng-template #displayMessage>
-  <ng-container *ngIf="isMessage(countdown)">
-    {{ countdown.message }}
-  </ng-container>
-</ng-template>
+<h1>Eröffnung Live</h1>
+<app-twitch-stream channel="rsvfeld3"></app-twitch-stream>
 
 <mat-divider class="divider"></mat-divider>
 

@@ -9,11 +9,17 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { Subscription, interval } from 'rxjs';
 import { MatDividerModule } from '@angular/material/divider';
+import { TwitchStreamComponent } from '../twitch-stream/twitch-stream.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatDividerModule],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatDividerModule,
+    TwitchStreamComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.sass',
 })
