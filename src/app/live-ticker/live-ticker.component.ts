@@ -71,13 +71,13 @@ export class LiveTickerComponent {
         this.currentChannel = 'RSVFeld1';
         break;
       case 1:
-        this.currentChannel = 'RSVFeld2';
+        this.currentChannel = 'RSVFeld1';
         break;
       case 2:
-        this.currentChannel = 'RSVFeld3';
+        this.currentChannel = 'RSVFeld2';
         break;
       case 3:
-        this.currentChannel = 'RSVFeld4';
+        this.currentChannel = 'RSVFeld2';
         break;
       default:
         this.currentChannel = 'RSVFeld1'; // Fallback channel
