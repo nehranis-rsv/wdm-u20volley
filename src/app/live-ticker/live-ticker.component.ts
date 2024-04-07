@@ -68,19 +68,19 @@ export class LiveTickerComponent {
   onTabChange(event: MatTabChangeEvent): void {
     switch (event.index) {
       case 0:
-        this.currentChannel = 'RSVFeld1';
+        this.currentChannel = 'RSVFeld2';
         break;
       case 1:
-        this.currentChannel = 'RSVFeld1';
+        this.currentChannel = 'RSVFeld2';
         break;
       case 2:
-        this.currentChannel = 'RSVFeld2';
+        this.currentChannel = 'RSVFeld3';
         break;
       case 3:
-        this.currentChannel = 'RSVFeld2';
+        this.currentChannel = 'RSVFeld3';
         break;
       default:
-        this.currentChannel = 'RSVFeld1'; // Fallback channel
+        this.currentChannel = 'RSVFeld2'; // Fallback channel
     }
     // You may want to reload the Twitch stream here if needed
   }
